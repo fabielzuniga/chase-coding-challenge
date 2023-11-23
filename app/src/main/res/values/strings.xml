@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Weather</string>
+    <string name="error_input_address_is_required">Input address is required</string>
+    <string name="error_getting_current_location">Error getting current location</string>
+    <string name="error_getting_weather">Error getting weather</string>
+    <string name="error_mapping_location_to_address">Unable to get address from location</string>
+    <string name="error_unknown_location">Unknown location</string>
+    <string name="gps_enabled">GPS enabled, please try again</string>
+    <string name="gps_not_enabled">Unable to enable GPS</string>
+    <string name="location_permission_granted">Location permission granted, please try again</string>
+    <string name="location_permission_denied">Location permission denied</string>
+    <string name="type_city_zipcode_or_address">Type city, zipcode or address</string>
+</resources>

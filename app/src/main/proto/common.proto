@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package fabiel.weather.common;
+
+option java_package = "com.fabiel.weather.common";
+option java_outer_classname = "CommonProtos";
+
+import "google/protobuf/timestamp.proto";
+
+// Model object that represetns the weather information
+message WeatherProto {
+  double latitude = 1;
+  double longitude = 2;
+
+  string main = 3;
+  string description = 4;
+  string icon_url = 5;
+
+  enum Unit {
+    UNIT_UNSPECIFIED = 0;
+    STANDARD = 1;
+    METRIC = 2;
+    IMPERIAL = 3;
+  }
+
+  Unit unit = 6;
+
+  // Temperature. Unit Default: Kelvin, Metric: Celsius, Imperial: Fahrenheit.
+  double temperature = 7;
+  // This temperature parameter accounts for the human perception of weather.
+  // Unit Default: Kelvin, Metric: Celsius, Imperial: Fahrenheit.
+  double feels_like = 8;
+  // Minimum temperature at the moment. This is minimal currently observed temperature
+  // (within large megalopolises and urban areas). Unit Default: Kelvin, Metric:
+  // Celsius, Imperial: Fahrenheit.
+  double temperature_min = 9;
+  // Maximum temperature at the moment. This is maximal currently observed temperature
+  // (within large megalopolises and urban areas). Unit Default: Kelvin, Metric:
+  // Celsius, Imperial: Fahrenheit.
+  double temperature_max = 10;
+  // Atmospheric pressure (on the sea level, if there is no sea_level or grnd_level data), hPa
+  int32 pressure = 11;
+  // Humidity, %
+  int32 humidity = 12;
+  //  Wind speed. Unit Default: meter/sec, Metric: meter/sec, Imperial: miles/hour.
+  double wind_speed = 13;
+}
+
+// Model object that represents a quantity that is already formatted for a view
+message QuantityProto {
+  string name = 1;
+  string value = 2;
+  string unit = 3;
+}
+
